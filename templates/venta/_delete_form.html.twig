@@ -1,5 +1,5 @@
 <form method="post" action="{{ path('venta_delete', {'id': ventum.id}) }}" onsubmit="return confirm('Estas seguro de eliminar este registro?');">
     <input type="hidden" name="_method" value="Borrar">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ventum.id) }}">
-    <button class="btn">Borrar</button>
+    <button class="btn btn-danger">Borrar</button>
 </form>
