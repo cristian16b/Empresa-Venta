@@ -80,4 +80,9 @@ class Empresa
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return "ID: " . $this->id . "EMPRESA: " . $this->nombre;
+    }
 }
