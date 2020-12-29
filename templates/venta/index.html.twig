@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Venta index{% endblock %}
+
+{% block body %}
+    <h1>Venta index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cliente</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ventum in ventas %}
+            <tr>
+                <td>{{ ventum.id }}</td>
+                <td>{{ ventum.cliente }}</td>
+                <td>
+                    <a href="{{ path('venta_show', {'id': ventum.id}) }}">show</a>
+                    <a href="{{ path('venta_edit', {'id': ventum.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('venta_new') }}">Create new</a>
+{% endblock %}
